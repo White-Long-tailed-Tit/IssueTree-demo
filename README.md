@@ -21,7 +21,9 @@ C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\
   symbol:   class MemberService
   location: class MemberController
 ```
-* 오류 발생 위치 파싱 가능 
+* 오류 발생 위치 파싱 가능 (아래와 같이 출력)
+  ![image](https://github.com/White-Long-tailed-Tit/IssueTree-demo/assets/65723420/94a2879f-5b3c-4ff8-89ff-bf48aba27905)
+
 
 3. java.lang.IllegalArgumentException 에러 
 ```
@@ -63,4 +65,7 @@ java.lang.IllegalArgumentException: Model has no value for key 'pageNumber'
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
 ... 중략
 ```
-* 참고글: https://goddaehee.tistory.com/323 
+* 참고글: https://goddaehee.tistory.com/323
+* 아래와 같이 출력됨
+  ![image](https://github.com/White-Long-tailed-Tit/IssueTree-demo/assets/65723420/b2ba1aee-9bac-4e3d-a104-c9ac90199530)
+
