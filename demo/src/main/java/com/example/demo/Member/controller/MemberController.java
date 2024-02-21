@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.example.demo.Member.controller;
 
-import com.example.demo.domain.Member;
-import com.example.demo.service.MemberService;
+import com.example.demo.Member.domain.Member;
+import com.example.demo.Member.service.MemberService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

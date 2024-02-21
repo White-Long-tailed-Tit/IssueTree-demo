@@ -1,8 +1,8 @@
-package com.example.demo.service;
+package com.example.demo.Member.service;
 
 
-import com.example.demo.domain.Member;
-import com.example.demo.repository.MemberRepository;
+import com.example.demo.Member.domain.Member;
+import com.example.demo.Member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
