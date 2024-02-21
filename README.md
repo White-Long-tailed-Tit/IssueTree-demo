@@ -2,13 +2,7 @@
 IssueTree 오류 메시지 파싱 테스트용 레포지토리
 
 ## 에러 메시지 파싱 
-1. DTO에 @Data 를 안붙이고 POST 요청을 보낼 시 
-```
-2024-02-13T12:53:20.036+09:00  WARN 10800 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: No acceptable representation]
-```
-* 오류 발생 위치 파싱 불가능 (사유: 에러 메시지에 존재하지 않음)
-
-2. package 경로명 잘못 입력시 
+1. package 경로명 잘못 입력시 
 ```
 C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\controller\MemberController.java:4: error: package com.example.demo.service does not exist
 import com.example.demo.service.MemberService;
@@ -19,7 +13,7 @@ import com.example.demo.service.MemberService;
 	File Path: C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\controller\MemberController.java:4
 	Error Message: package com.example.demo.service does not exist
 	```
-
+2. package 경로명 잘못 입력시 2 
 ```
 C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\controller\MemberController.java:14: error: cannot find symbol
     private final MemberService memberService;
@@ -27,9 +21,54 @@ C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\
   symbol:   class MemberService
   location: class MemberController
 ```
-* 오류 발생 위치 파싱 가능 
+* 파싱 결과 
+	```
+	File Path: C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\controller\MemberController.java
+	Error Message: cannot find symbol
+	```
 
-3. java.lang.IllegalArgumentException 에러 
+3. FileNotFoundException 에러 
+```
+java.io.FileNotFoundException: C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\controller\NonexistentController.java (No such file or directory)
+```
+
+4. 변수가 초기화되지 않음 (variable might not have been initialized)
+```java
+public class Example {
+    public static void main(String[] args) {
+        int x;
+        System.out.println(x);
+    }
+}
+```
+```
+Example.java:4: error: variable x might not have been initialized
+        System.out.println(x);
+```
+
+5. dispatchservlet 내에서 발생한 예외
+
+6. dispatchservlet 전에 발생한 예외 
+
+7. cannot resolve class or package 'mysql'  에러 
+	* https://pigeon-blog.tistory.com/208 의 1 목록 참고 
+
+8. spring.jpa.hibernate.ddl-auto=update invalid value 
+	* https://pigeon-blog.tistory.com/208 의 2 목록 참고 
+
+9. com.mysql.jdbc.Driver deprecated 
+	* https://pigeon-blog.tistory.com/208 의 3 목록 참고
+
+10. variable not initialized in the default constructor 에러
+	* https://pigeon-blog.tistory.com/199 참고 
+
+## 파싱이 여러운 경우 
+1. DTO에 @Data 를 안붙이고 POST 요청을 보낼 시 
+```
+2024-02-13T12:53:20.036+09:00  WARN 10800 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotAcceptableException: No acceptable representation]
+```
+* 오류 발생 위치 파싱 불가능 (사유: 에러 메시지에 존재하지 않음)
+2. java.lang.IllegalArgumentException 에러 
 ```
 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Model has no value for key 'pageNumber'] with root cause
 java.lang.IllegalArgumentException: Model has no value for key 'pageNumber'
@@ -72,4 +111,3 @@ java.lang.IllegalArgumentException: Model has no value for key 'pageNumber'
 * 참고글: https://goddaehee.tistory.com/323
 * 아래와 같이 출력됨
   ![image](https://github.com/White-Long-tailed-Tit/IssueTree-demo/assets/65723420/b2ba1aee-9bac-4e3d-a104-c9ac90199530)
-
