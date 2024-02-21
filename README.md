@@ -14,6 +14,12 @@ C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\
 import com.example.demo.service.MemberService;
                                ^
 ``` 
+* 파싱 결과
+	```
+	File Path: C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\controller\MemberController.java:4
+	Error Message: package com.example.demo.service does not exist
+	```
+
 ```
 C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\controller\MemberController.java:14: error: cannot find symbol
     private final MemberService memberService;
@@ -21,7 +27,12 @@ C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\
   symbol:   class MemberService
   location: class MemberController
 ```
-* 오류 발생 위치 파싱 가능 
+* 파싱 결과
+	```
+	File Path: C:\Users\user\Desktop\휴학\IssueTree-demo\demo\src\main\java\com\example\demo\controller\MemberController.java:14
+	Error Message: cannot find symbol
+	```
+
 
 3. java.lang.IllegalArgumentException 에러 
 ```
